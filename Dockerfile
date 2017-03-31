@@ -4,6 +4,15 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 ###############################################################################
+# Set locale
+
+RUN apt-get install -y locales locales-all
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+###############################################################################
 # Install gosu
 
 RUN apt-get install -y curl
@@ -30,16 +39,6 @@ RUN apt-get install -y bzr vim python3-pip qttools5-dev-tools pyqt5-dev-tools py
                        python3-pep8 python3-mediainfodll pylint
 
 RUN pip3 install jenkins-webapi
-
-
-###############################################################################
-# Set locale
-
-RUN apt-get install -y locales locales-all
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
 
 ###############################################################################
 # Setup entrypoint
