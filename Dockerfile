@@ -36,9 +36,9 @@ RUN apt-get install -y bzr vim python3-pip qttools5-dev-tools pyqt5-dev-tools py
                        python3-pyqt5.qtsvg python3-pyqt5.qtwebkit python3-pyqt5.qtopengl python3-sqlalchemy \
                        python3-chardet python3-lxml python3-enchant python3-bs4 python3-mako python3-uno \
                        python3-nose python3-pip python3-alembic python3-xdg python3-dbus.mainloop.pyqt \
-                       python3-pep8 python3-mediainfodll pylint
+                       python3-pep8 python3-mediainfodll mediainfo
 
-RUN pip3 install jenkins-webapi
+RUN pip3 install jenkins-webapi pylint
 
 ###############################################################################
 # Setup entrypoint
